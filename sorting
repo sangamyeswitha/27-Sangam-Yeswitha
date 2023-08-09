@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+
+function NumberSorting() {
+  const [numbers, setNumber] = useState([1,2,3,5,8,13]);
+
+  const sortNumber = () => {
+    setNumber([...numbers].sort((a, b) => a - b));
+  };
+
+  return (
+    <div>
+      <h1>Number Sorting</h1>
+      <button onClick={sortNumber}>Sort Number</button>
+      <ul>
+        {numbers.map((number, index) => (
+          <li key={index}>{number}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default NumberSorting;
